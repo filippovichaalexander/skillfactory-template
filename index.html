@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RB Courses page</title>
+    <link rel="stylesheet" href="vendor/flatpickr/dist/flatpickr.min.css" />
+    <link
+      rel="stylesheet"
+      href="vendor/noUiSlider-15.2.0/dist/nouislider.min.css"
+    />
+    <link rel="stylesheet" href="vendor/DataTables/datatables.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__top">
+          <ul class="header__top-list">
+            <li class="header__top-item">
+              <a class="header__top-link" href="">RB.RU</a>
+            </li>
+            <li class="header__top-item">
+              <a class="header__top-link" href="">EVENTS</a>
+            </li>
+            <li class="header__top-item">
+              <a class="header__top-link" href="">CHANCE</a>
+            </li>
+            <li class="header__top-item">
+              <a class="header__top-link" href="">data</a>
+            </li>
+            <li class="header__top-item">
+              <a class="header__top-link" href="">PIPELINE</a>
+            </li>
+            <li class="header__top-item header__top-item-active">
+              <a class="header__top-link" href="">courses</a>
+            </li>
+          </ul>
+        </div>
+        
+          <div class="heading">
+            <div class="logo">
+              <a href="#"> <img src="./images/logo.svg" alt="logo" /> </a>
+              <span class="kat">КАТАЛОГ КУРСОВ</span>
+            </div>
+            <nav class="menu" id="menuBox">
+              <div class="heading__links">
+                <a class="heading__links-link" href="">Тест на профессию</a>
+                <a class="heading__links-link" href="">Акции</a>
+                <a class="heading__links-link" href="">Отзывы</a>
+              </div>
+              <div class="heading__button">
+                <div class="heading__button-head">
+                  <button
+                    onclick="allFunction()"
+                    class="heading__button-head dropbtn"
+                  >
+                    Все курсы
+                    <img class="arrow" src="./images/arrow.svg" alt="arrow" />
+                  </button>
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                  <div class="dropdown-content__left" id="dropdownContentL">
+                    <button
+                      onclick="listFunction()"
+                      class="dropdown-content__btn dropdown-content__btn-active"
+                    >
+                      Программирование
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="dropdown-content__btn">
+                      Управление
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="dropdown-content__btn">
+                      Дизайн
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="dropdown-content__btn">
+                      Маркетинг
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="dropdown-content__btn">
+                      Аналитика
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                    <button class="dropdown-content__btn">
+                      Создание контента
+                      <svg
+                        class="dropdown-content__btn-icon"
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.986084 12.355L5.9394 7L0.986084 1.645L2.51101 -1.19209e-07L9.00007 7L2.51101 14L0.986084 12.355Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="dropdown-content__right" id="dropdownContentR">
+                    <button
+                      class="dropdown-content-right-back"
+                      onclick="backDropdownContent()"
+                    >
+                      <img
+                        class="dropdown-content-right-back-icon"
+                        src="./images/arrow-back.svg"
+                        alt="back"
+                      />
+                      <span class="dropdown-content-right-back-text">Назад</span>
+                    </button>
+                    <div class="dropdown-content-right-inner">
+                      <a href="" class="dropdown-content-link"
+                        >Все курсы по программированию</a
+                      >
+                      <a href="" class="dropdown-content-link">Web-разработка</a>
+                      <a href="" class="dropdown-content-link"
+                        >Python-разработка</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >JavaScript-разработка</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Мобильная разработка</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Frontend-разработка</a
+                      >
+                      <a href="" class="dropdown-content-link">
+                        Системное администрирование</a
+                      >
+                      <a href="" class="dropdown-content-link">Разработка игр</a>
+                      <a href="" class="dropdown-content-link">Java-разработка</a>
+                      <a href="" class="dropdown-content-link"
+                        >Верстка на HTML/CSS</a
+                      >
+                      <a href="" class="dropdown-content-link">PHP-разработка</a>
+                      <a href="" class="dropdown-content-link">QA-тестирование</a>
+                      <a href="" class="dropdown-content-link"
+                        >Android-разработка</a
+                      >
+                      <a href="" class="dropdown-content-link">IOS-разработка</a>
+                      <a href="" class="dropdown-content-link"
+                        >Разработка игр на Unity</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Фреймворк ReactJS</a
+                      >
+                      <a href="" class="dropdown-content-link">DevOps</a>
+                      <a href="" class="dropdown-content-link"
+                        >Разработка на C#</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Информационная безопасность</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Разработка игр на Unreal Engine</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Фреймворк Django</a
+                      >
+                      <a href="" class="dropdown-content-link"
+                        >Фреймворк Spring</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <button
+              onclick="menuFunction()"
+              class="hamburger-menu"
+              id="hamburgerMenu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+    </header>
+    <main class="main">
+      <section class="page">
+        <div class="container">
+          <div class="bread-crumbs">
+            <div class="bread-crumbs__wrapper">
+              <ul class="breadcrumb">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Курсы</a></li>
+                <li><a href="#">Программирование</a></li>
+                <li>
+                  Профессия Fullstack-разработчик на JavaScript от...
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h1 class="title">
+            Профессия Fullstack-разработчик на JavaScript от SkillFactory
+          </h1>
+          <section class="course">
+              <div class="courses__links courses__links--top">
+                  <a href="" class="courses__link">Программирование</a>
+                  <a href="" class="courses__link">Java-разработка</a>
+                  <a href="" class="courses__link">Все курсы Skillbox</a>
+              </div>
+              <div class="course__wrapper">
+                <div class="course__wrapper-left">
+                  <p class="course__description-top course--description-item">
+                    На курсе вы научитесь создавать корпоративные приложения
+                    и встраивать их в инфраструктуру бизнеса.
+                  </p>
+                  <div class="course__description-middle course--description-item">
+                    <div class="course__description-middle-item">
+                      <p class="course__description-middle-title">Начало</p>
+                      <p class="course__description-middle-date">07.03.2022 г.</p>
+                    </div>
+                    <div class="course__description-middle-item">
+                      <p class="course__description-middle-title">Начало</p>
+                      <p class="course__description-middle-date">12 месяцев</p>
+                    </div>
+                    <div class="course__description-middle-item course__description-middle-item-last">
+                      <p class="course__description-middle-title">Начало</p>
+                      <p class="course__description-middle-date">Около 8 часов в неделю</p>
+                    </div>
+                  </div>
+                  <div class="course__description-bottom course--description-item">
+                    <div
+                      class="course__description-bottom-item course__description-bottom--item"
+                    >
+                      <img
+                        class="course__description-bottom-item-icon"
+                        src="./images/Message.svg"
+                        alt=""
+                      />
+                      <p class="course__description-bottom-item-text">
+                        Общение с экспертами
+                      </p>
+                    </div>
+                    <div
+                      class="course__description-bottom-item course__description-bottom--item"
+                    >
+                      <img
+                        class="course__description-bottom-item-icon"
+                        src="./images/Calendar.svg"
+                        alt=""
+                      />
+                      <p class="course__description-bottom-item-text">
+                        Доступ к курсу навсегда
+                      </p>
+                    </div>
+                    <div
+                      class="course__description-bottom-item 
+                      course__description-bottom--item 
+                      course__description-bottom--item-last"
+                    >
+                      <img
+                        class="course__description-bottom-item-icon"
+                        src="./images/Practice.svg"
+                        alt=""
+                      />
+                      <p class="course__description-bottom-item-text">
+                        Практика на реальных проектах
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="course__wrapper-right">
+                  <div class="course__wrapper-right-rating ">
+                    <div class="sum-rating">
+                      <img class="actual-rate-icon" src="./images/star.svg" alt="star" /><span
+                        class="actual-rate"
+                        >4.9</span
+                      ><span class="total-rate">(5.0)</span>
+                    </div>
+                    <a class="course__reviews" href="#"><p>все отзывы о школе</p></a>
+                  </div>
+                  <div
+                    class="course__wrapper-right-price course__wrapper-right--item-bottom"
+                  >
+                    <p class="course__wrapper-right-price-old">166 777 ₽ / курс</p>
+                    <p class="course__wrapper-right-price-new">98 150 ₽/курс</p>
+                    <p class="course__wrapper-right-price-from">От 6 777 ₽/мес</p>
+                  </div>
+                  <div
+                    class="course__wrapper-right-discount course__wrapper-right--item-bottom"
+                  >
+                    <div class="course__wrapper-right-discount-item">
+                      <img class="course__wrapper-right-discount-icon" src="./images/Check-uncheck.svg" alt="sale">
+                      <div class="course__wrapper-right-discount-content">
+                        <p class="course__wrapper-right-discount-text">скидка</p>
+                        <p class="course__wrapper-right-discount-amount">30%</p>
+                      </div>
+                    </div>
+                    <div class="course__wrapper-right-discount-item">
+                      <img class="course__wrapper-right-discount-icon" src="./images/Check-check.svg" alt="sale">
+                      <div class="course__wrapper-right-discount-content">
+                        <p class="course__wrapper-right-discount-text">рассрочка</p>
+                        <p class="course__wrapper-right-discount-amount">24 месяца</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="course__wrapper-btn course__wrapper-right--item-bottom">
+                    <a href="" class="btn content__box-link btn--top-add">
+                      Записаться на курс
+                    </a>
+                  </div>
+                </div>
+              </div>
+          </section>
+              <!-- <input class="radio" id="one" name="group" type="radio" >
+              <input class="radio" id="two" name="group" type="radio" >
+              <input class="radio" id="three" name="group" type="radio">
+              <input class="radio" id="four" name="group" type="radio" checked>  -->
+              
+              <div class="page__links">
+                <a href="" class="courses__link">О курсе</a>
+                <a href="" class="courses__link">Акции</a>
+                <a href="" class="courses__link">Отзывы</a>
+                <a href="" class="courses__link">Курсы</a>
+            </div>
+              <!-- <div class="panels"> -->
+          <section class="about panel">
+            <h1 class="title">Профессия Fullstack-разработчик
+              на JavaScript от SkillFactory</h1>
+            <div class="about__subtitle">
+              <p class="about__subtitle-top">С помощью курса вы углубитесь в разработку на Java и научитесь создавать микросервисную архитектуру приложений, познакомитесь со стандартами корпоративной разработки, освоите Spring, Maven и другие инструменты.</p>
+              <p class="about__subtitle-bottom">Вы прокачаете свои навыки и повысите свою ценность в глазах работодателя.</p>
+            </div>
+            <div class="about__content">
+              <div class="about__content-item">
+                <h2 class="about__content-item-title">Для кого курс</h2>
+                <p class="about__content-item-subtitle">Курс "Enterprise технологии в Java-разработке" подойдет:</p>
+                <div class="about__content-item-content">
+                  <div class="about__content-item-content-top">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">junior-разработчикам</p>
+                  </div>
+                  <div class="about__content-item-content-bottom">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">middle-разработчикам на Java</p>
+                  </div>
+                </div>
+              </div>
+              <div class="about__content-item">
+                <h2 class="about__content-item-title">Для кого курс</h2>
+                <p class="about__content-item-subtitle">Курс "Enterprise технологии в Java-разработке" подойдет:</p>
+                <div class="about__content-item-content">
+                  <div class="about__content-item-content-top">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">junior-разработчикам</p>
+                  </div>
+                  <div class="about__content-item-content-bottom">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">middle-разработчикам на Java</p>
+                  </div>
+                </div>
+              </div>
+              <div class="about__content-item">
+                <h2 class="about__content-item-title">Для кого курс</h2>
+                <p class="about__content-item-subtitle">Курс "Enterprise технологии в Java-разработке" подойдет:</p>
+                <div class="about__content-item-content">
+                  <div class="about__content-item-content-top">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">junior-разработчикам</p>
+                  </div>
+                  <div class="about__content-item-content-bottom">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">middle-разработчикам на Java</p>
+                  </div>
+                </div>
+              </div>
+              <div class="about__content-item">
+                <h2 class="about__content-item-title">Для кого курс</h2>
+                <p class="about__content-item-subtitle">Курс "Enterprise технологии в Java-разработке" подойдет:</p>
+                <div class="about__content-item-content">
+                  <div class="about__content-item-content-top">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">junior-разработчикам</p>
+                  </div>
+                  <div class="about__content-item-content-bottom">
+                    <img src="./images/check-icon.svg" alt="check" class="about__content-item-icon">
+                    <p class="about__content-item-content-text">middle-разработчикам на Java</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="course__wrapper-btn course--btn-center">
+              <a href="#" class="btn content__box-link ">
+                Узнать подробнее о курсе
+              </a>
+            </div>
+          </section>
+          <section class="reviews panel">
+            <h1 class="title title-desktop title--reviews">Отзывы учеников курса Fullstack-разработчик на JavaScript</h1>
+            <div class="reviews__wrapper">
+              <div class="reviews__item">
+                <div class="reviews__item-left">
+                  <div class="reviews__item-ava">
+                    <img src="./images/reviews-ava.svg" alt="avatar" class="reviews__item-icon">
+                  </div>
+                  <div class="reviews__comments-wrapper">
+                    <p class="reviews__item-date">06.05.2022</p>
+                    <div class="sum-rating reviews--sum-rating">
+                      <img class="actual-rate-icon" src="./images/star.svg" alt="star" /><span
+                        class="actual-rate"
+                        >4.9</span>
+                    </div>
+                    <p class="total-rate reviews--total-rate">из 5.0</p>
+                  </div>
+                  <div class="likes">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                        <img src="./images/dislike.svg" alt="" class="dislike">
+                      </div>
+                  </div>
+                </div>
+                <div class="reviews__item-content">
+                  <div class="reviews__item-name-wrapper">
+                    <h2 class="reviews__item-name">Александр</h2> 
+                    <p class="reviews__item-course">курс “Профессия Fullstack-разработчик”</p>
+                  </div>
+                  <div class="reviews__item-middle">
+                    <p class="reviews__item-middle-top">В SkillFactory шел с четкой целью — хочу стать айтишником. С самого начала я очень усердно занимался 
+                      и даже шел впереди основного графика. Сложность модулей со временем нарастала, 
+                      а вот мое усердие поослабло. Меня начали терзать сомнения насчет того, не погорячился ли я с
+                        покупкой всего курса целиком.</p>
+                        <p class="reviews__item-middle-bottom">В некотором унынии я провел пару месяцев и не учился...</p>
+                        <a href="#" class="reviews__item-middle-link reviews-item-bottom--link reviews-item-content--link"><span class="reviews__item-link-text">Развернуть отзыв</span></a>
+                  </div>
+                  <div class="reviews__item-bottom">
+                    <div class="reviews__item-bottom-item reviews-item-bottom--left">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/plus-icon.svg" alt="advantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title">Плюсы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Опытные преподаватели. Много практики. Гибкая систем оплаты.
+                        </p>
+                        <p class="reviews__item-bottom-text">
+                            Можно получить скидку на обучение.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            На онлайн-конференциях есть чат, чтобы задавать вопросы спикеру
+                        </p>
+                      </div>
+                    </div>
+                    <div class="reviews__item-bottom-item reviews-item-bottom--right">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/minus-icon.svg" alt="disadvantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title reviews__item-bottom-title-minus">Минусы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Слишком затянуто по времени. Сделайте набор для тех у кого нулевые знания.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            Большие группы. Могут пропустить вопрос.
+                        </p>
+                      </div>
+                    </div>
+                    <a href="#" class="reviews__item-bottom-link reviews-item-bottom--link"><span class="reviews__item-link-text">Прокомментировать</span></a>
+                  </div>
+                  <div class="likes likes--mobile">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                        <img src="./images/dislike.svg" alt="" class="dislike">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__item-left">
+                  <div class="reviews__item-ava">
+                    <img src="./images/reviews-ava.svg" alt="avatar" class="reviews__item-icon">
+                  </div>
+                  <div class="reviews__comments-wrapper">
+                    <p class="reviews__item-date">06.05.2022</p>
+                    <div class="sum-rating reviews--sum-rating">
+                      <img class="actual-rate-icon" src="./images/star.svg" alt="star" /><span
+                        class="actual-rate"
+                        >4.9</span>
+                    </div>
+                    <p class="total-rate reviews--total-rate">из 5.0</p>
+                  </div>
+                  <div class="likes">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                        <img src="./images/dislike.svg" alt="" class="dislike">
+                      </div>
+                  </div>
+                </div>
+                <div class="reviews__item-content">
+                  <div class="reviews__item-name-wrapper">
+                    <h2 class="reviews__item-name">Александр</h2> 
+                    <p class="reviews__item-course">курс “Профессия Fullstack-разработчик”</p>
+                  </div>
+                  <div class="reviews__item-middle">
+                    <p class="reviews__item-middle-top">В SkillFactory шел с четкой целью — хочу стать айтишником. С самого начала я очень усердно занимался 
+                      и даже шел впереди основного графика. Сложность модулей со временем нарастала, 
+                      а вот мое усердие поослабло. Меня начали терзать сомнения насчет того, не погорячился ли я с
+                        покупкой всего курса целиком.</p>
+                        <p class="reviews__item-middle-bottom">В некотором унынии я провел пару месяцев и не учился...</p>
+                        <a href="#" class="reviews__item-middle-link reviews-item-bottom--link"><span class="reviews__item-link-text">Развернуть отзыв</span></a>
+                  </div>
+                  <div class="reviews__item-bottom">
+                    <div class="reviews__item-bottom-item reviews-item-bottom--left">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/plus-icon.svg" alt="advantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title">Плюсы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Опытные преподаватели. Много практики. Гибкая систем оплаты.
+                        </p>
+                        <p class="reviews__item-bottom-text">
+                            Можно получить скидку на обучение.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            На онлайн-конференциях есть чат, чтобы задавать вопросы спикеру
+                        </p>
+                      </div>
+                    </div>
+                    <div class="reviews__item-bottom-item reviews-item-bottom--right">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/minus-icon.svg" alt="disadvantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title reviews__item-bottom-title-minus">Минусы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Слишком затянуто по времени. Сделайте набор для тех у кого нулевые знания.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            Большие группы. Могут пропустить вопрос.
+                        </p>
+                      </div>
+                    </div>
+                    <a href="#" class="reviews__item-bottom-link reviews-item-bottom--link"><span class="reviews__item-link-text">Прокомментировать</span></a>
+                  </div>
+                  <div class="likes likes--mobile">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                      <img src="./images/dislike.svg" alt="" class="dislike">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="reviews__item">
+                <div class="reviews__item-left">
+                  <div class="reviews__item-ava">
+                    <img src="./images/reviews-ava.svg" alt="avatar" class="reviews__item-icon">
+                  </div>
+                  <div class="reviews__comments-wrapper">
+                    <p class="reviews__item-date">06.05.2022</p>
+                    <div class="sum-rating reviews--sum-rating">
+                      <img class="actual-rate-icon" src="./images/star.svg" alt="star" /><span
+                        class="actual-rate"
+                        >4.9</span>
+                    </div>
+                    <p class="total-rate reviews--total-rate">из 5.0</p>
+                  </div>
+                  <div class="likes">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                        <img src="./images/dislike.svg" alt="" class="dislike">
+                      </div>
+                  </div>
+                </div>
+                <div class="reviews__item-content">
+                  <div class="reviews__item-name-wrapper">
+                    <h2 class="reviews__item-name">Александр</h2> 
+                    <p class="reviews__item-course">курс “Профессия Fullstack-разработчик”</p>
+                  </div>
+                  <div class="reviews__item-middle">
+                    <p class="reviews__item-middle-top">В SkillFactory шел с четкой целью — хочу стать айтишником. С самого начала я очень усердно занимался 
+                      и даже шел впереди основного графика. Сложность модулей со временем нарастала, 
+                      а вот мое усердие поослабло. Меня начали терзать сомнения насчет того, не погорячился ли я с
+                        покупкой всего курса целиком.</p>
+                        <p class="reviews__item-middle-bottom">В некотором унынии я провел пару месяцев и не учился...</p>
+                        <a href="#" class="reviews__item-middle-link reviews-item-bottom--link"><span class="reviews__item-link-text">Развернуть отзыв</span></a>
+                  </div>
+                  <div class="reviews__item-bottom">
+                    <div class="reviews__item-bottom-item reviews-item-bottom--left">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/plus-icon.svg" alt="advantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title">Плюсы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Опытные преподаватели. Много практики. Гибкая систем оплаты.
+                        </p>
+                        <p class="reviews__item-bottom-text">
+                            Можно получить скидку на обучение.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            На онлайн-конференциях есть чат, чтобы задавать вопросы спикеру
+                        </p>
+                      </div>
+                    </div>
+                    <div class="reviews__item-bottom-item reviews-item-bottom--right">
+                      <div class="reviews__item-bottom-title-wrapper">
+                        <img src="./images/minus-icon.svg" alt="disadvantages" class="reviews__item-bottom-title-icon">
+                        <h3 class="reviews__item-bottom-title reviews__item-bottom-title-minus">Минусы</h3>
+                      </div>
+                      <div class="reviews__item-bottom-content">
+                        <p class="reviews__item-bottom-text">
+                            Слишком затянуто по времени. Сделайте набор для тех у кого нулевые знания.
+                        </p>
+                        <p class="reviews__item-bottom-text reviews-item-bottom--last-text">
+                            Большие группы. Могут пропустить вопрос.
+                        </p>
+                      </div>
+                    </div>
+                    <a href="#" class="reviews__item-bottom-link reviews-item-bottom--link"><span class="reviews__item-link-text">Прокомментировать</span></a>
+                  </div>
+                  <div class="likes likes--mobile">
+                    <div class="like-wrapper">
+                      <img src="./images/like.svg" alt="" class="like">
+                      <div class="like-amount"><span class="like-amount-value">4</span></div>
+                    </div>
+                    <div class="like-wrapper">
+                        <img src="./images/dislike.svg" alt="" class="dislike">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-btns">
+                <div class="wrapper-btn course__wrapper-right--item-bottom wrapper-btn--mobile">
+                  <a href="" class="btn content__box-link btn--mobile">
+                    Записаться на курс
+                  </a>
+                </div>
+                <div class="wrapper-btn course__wrapper-right--item-bottom wrapper-btn--mobile">
+                  <a href="" class="btn content__box-link btn--light btn--mobile">
+                    Записаться на курс
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="promo panel">
+            <img class="coupon-desktop" src="./images/Coupon.jpg" alt="sale">
+            <img class="coupon-mobile" src="./images/Coupon-mobile.jpg" alt="sale">
+          </section>
+          <section class="courses panel">
+              <h1 class="title">Другие актуальные курсы</h1>
+              <div class="courses__wrapper">
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                  </div>
+                </div>
+                <div class="courses__item">
+                  <h3 class="courses__title">Курс UI/UX Дизайн от SkillFactory</h3>
+                  <div class="courses__middle">
+                    <p class="courses__duration">6 месяцев</p>
+                    <p class="courses__price">4 150 ₽ / мес</p>
+                  </div>
+                  <div class="course__wrapper-btn ">
+                      <a href="#" class="btn content__box-link courses--btn">
+                        Подробнее
+                      </a>
+                    </div>
+                </div>
+              </div>
+              <div class="courses__categories">
+                <h2 class="courses__categories-title">Другие категории курсов по программированию</h2>
+                <div class="courses__links-wrapper">
+                  <div class="courses__links">
+                    <a href="" class="courses__link">Web-разработка</a>
+                    <a href="" class="courses__link">Мобильная разработка</a>
+                    <a href="" class="courses__link">iOS разработка</a>
+                    <a href="" class="courses__link">QA тестирование</a>
+                    <a href="" class="courses__link">Разработка игр</a>
+                  </div>
+                  <a href="#" class="courses__item-bottom-link">
+                    <span class="courses__item-link-text">Все категории</span>
+                  </a>
+                </div>
+              </div>
+          </section>
+          <section class="subscribe-add"> 
+              <div class="subscribe-add__wrapper">
+                <div class="subscribe-add__left">
+                  <h4 class="subscribe-add__name">Профессия Fullstack-разработчик
+                      на JavaScript от SkillFactory</h4>
+                  <p class="subscribe-add__price">98 150 ₽/курс </p>
+                </div>
+                <div class="course__wrapper-btn ">
+                    <a href="#" class="btn content__box-link btn-desktop">
+                        Записаться на курс
+                    </a>
+                    <a href="#" class="btn content__box-link btn-mobile">
+                      Записаться
+                  </a>
+                </div>
+              </div>
+          </section> 
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__top">
+            <a class="footer__text" href="#">О нас</a>
+            <a class="footer__text" href=#">Контакты</a>
+            <a class="footer__text" href=#">Отзывы о школах</a>
+          </div>
+          <ul class="footer__social">
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item facebook"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item telegram"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item vkontakte"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item twitter"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item yandex"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item odnoklassniki"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item instagram"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item tiktok"></a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="" class="footer__social-item viber"></a>
+            </li>
+
+          </ul>
+          <div class="footer__bottom">
+            <p class="footer__bottom-left">© 2022 coursator.online</p>
+            <div class="footer__bottom-right">
+              <a class="footer__text" href="#">Политика конфиденциальности</a>
+              <a class="footer__text footer--text-last" href=#">Пользовательское соглашение</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+
+    <!-- <script src="vendor/flatpickr/dist/flatpickr.min.js"></script> -->
+    <!-- <script src="vendor/noUiSlider-15.2.0/dist/nouislider.min.js"></script> -->
+    <!-- <script src="vendor/sticky-sidebar/dist/jquery.sticky-sidebar.min.js"></script> -->
+    <!-- <script src="vendor/DataTables/datatables.min.js"></script> -->
+
+    <!-- <script src="js/main.js"></script> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
