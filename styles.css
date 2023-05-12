@@ -1523,6 +1523,44 @@ input[type="submit"] {
   margin-top: 60px;
   margin-bottom: 60px;
 }
+.promo__wrapper {
+  margin: 0 auto;
+  height: 375px;
+  width: 980px;
+  /* background: url(./images/Coupon.svg) cover no-repeat; */
+  background: no-repeat center url(./images/Coupon.svg);
+  /* background-size: cover; */
+
+  position: relative;
+}
+.promo__title {
+  width: 60%;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 800;
+  font-size: 75px;
+}
+.promo__title span {
+  font-size: 65px;
+}
+.promo__comment-wrapper {
+  padding: 14px 21px;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  transform: rotate(-4.77deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.promo__image {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+}
 /* Subscribe Adds */
 
 .subscribe-add {
